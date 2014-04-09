@@ -8,9 +8,10 @@ game.PlayerEntity = me.ObjectEntity.extend({
         this.collidable = true;
         
         this.renderable.addAnimation("idle", [3]); 
+        this.renderable.addAnimation("run", [5,6,7,8,9,10,11,12,13,14]);
         this.renderable.setCurrentAnimation("idle");
         
-        this.setVelocity(30, 20);
+        this.setVelocity(10, 20);
         
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH); 
     },
