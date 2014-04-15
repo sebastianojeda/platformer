@@ -44,6 +44,7 @@ var game = {
                 
                 me.entityPool.add("player", game.PlayerEntity);
                 me.entityPool.add("levelTrigger", game.LevelTrigger);
+                 me.entityPool.add("levelTrigger2", game.LevelTrigger2);
                 
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
                 me.input.bindKey(me.input.KEY.LEFT, "left");

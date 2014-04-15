@@ -4,12 +4,12 @@ game.resources = [
 	 * @example
 	 * {name: "example", type:"image", src: "data/img/example.png"},
 	 */
-
            {name: "background-tiles", type:"image", src: "data/img/background-tiles.png"},
            {name: "player1-spritesheet", type:"image", src: "data/img/player1-spritesheet.png"},
            {name: "solid-tile", type:"image", src: "data/img/solid-tile.png"},
-           {name: "Space-Universe", type:"image", src: "data/img/Space-Universe.jpg"},
            {name: "cloud-tiles", type:"image", src: "data/img/cloud-tiles.png"},
+           {name: "htc-one", type:"image", src: "data/img/htc-one.jpg"},
+           {name: "level", type:"image", src: "data/img/level.png"},
 	/* Atlases 
 	 * @example
 	 * {name: "example_tps", type: "tps", src: "data/img/example_tps.json"},
