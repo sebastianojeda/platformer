@@ -3,6 +3,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
         settings.image = "player1-spritesheet";
         settings.spritewidth = "72";
         settings.spriteheight = "97";
+        settings.width = 72;
+        settings.height = 97;
         this.parent(x,y,settings);
         
         this.collidable = true;
@@ -17,11 +19,13 @@ game.PlayerEntity = me.ObjectEntity.extend({
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH); 
     },
        
-    update: function(){
+    update: function(deltatime){
         if(me.input.isKeyPressed("right")){
+            
             this.vel.x += this.accel.x * me.timer.tick;
         }
         else if(me.input.isKeyPressed("left")){
+            
             this.vel.x -= this.accel.x * me.timer.tick;
         }
         
@@ -31,15 +35,17 @@ game.PlayerEntity = me.ObjectEntity.extend({
         }
         
          if(me.input.isKeyPressed("up")){
-            this.doJump();
+            if(!this.jumping && !this.falling) {
+            this.vel.y = -this.maxVel.y * me.timer.tick;
             this.renderable.setCurrentAnimation("up");
+            this.jumping = true;
+        }   
         }
         
      
-        var collision = this.collide();
+        var collision = me.game.world.collide(this);
         this.updateMovement();
-        this.parent();
-        
+        this.parent(deltatime);
         return true;
     }
 });
@@ -53,23 +59,9 @@ game.LevelTrigger = me.ObjectEntity.extend({
             
     onCollision: function(){
        this.collidable = false;
-       me.levelDirector.loadLevel.defer(this.level);
-       me.state.current().resetPlayer.defer();
+       me.levelDirector.loadLevel(this.level);
+       me.state.current().resetPlayer();
     }
     
 });
 
-game.LevelTrigger2 = me.ObjectEntity.extend({
-    init: function(x, y, settings){
-       this.parent(x, y, settings); 
-       this.collidable = true;
-       this.level = settings.level;
-    },
-            
-    onCollision: function(){
-       this.collidable = false;
-       me.levelDirector.loadLevel.defer(this.level);
-       me.state.current().resetPlayer.defer();
-    }
-    
-});
