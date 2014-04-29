@@ -21,34 +21,37 @@ game.PlayerEntity = me.ObjectEntity.extend({
        
     update: function(deltatime){
         if(me.input.isKeyPressed("right")){
-            
-            this.vel.x += this.accel.x * me.timer.tick;
-        }
+         this.renderable.flipX(false);
+         this.vel.x += this.accel.x * me.timer.tick;
+ }
         else if(me.input.isKeyPressed("left")){
-            
+            this.renderable.flipX(true);
             this.vel.x -= this.accel.x * me.timer.tick;
-        }
+ }
         
            else{
             this.vel.x =0;
              this.renderable.setCurrentAnimation("run");
-        }
+ }
         
          if(me.input.isKeyPressed("up")){
             if(!this.jumping && !this.falling) {
             this.vel.y = -this.maxVel.y * me.timer.tick;
             this.renderable.setCurrentAnimation("up");
             this.jumping = true;
-        }   
-        }
+  }   
+  }
         
-     
+  {
         var collision = me.game.world.collide(this);
         this.updateMovement();
         this.parent(deltatime);
         return true;
-    }
-});
+ }
+  
+
+ }
+ });
 
 game.LevelTrigger = me.ObjectEntity.extend({
     init: function(x, y, settings){

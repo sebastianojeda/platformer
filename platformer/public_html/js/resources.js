@@ -13,6 +13,7 @@ game.resources = [
            {name: "DEEP_SPACE", type:"image", src: "data/img/DEEP_SPACE.jpg"},
            {name: "color-cloud", type:"image", src: "data/img/color-cloud.jpg"},
            {name: "level4", type:"image", src: "data/img/level4.png"},
+           {name: "star", type:"image", src: "data/img/star.png"},
 	/* Atlases 
 	 * @example
 	 * {name: "example_tps", type: "tps", src: "data/img/example_tps.json"},
@@ -28,7 +29,9 @@ game.resources = [
            {name: "level02", type:"tmx", src: "data/map/level02.tmx"},
            {name: "level03", type:"tmx", src: "data/map/level03.tmx"},
            {name: "level04", type:"tmx", src: "data/map/level04.tmx"},
-           {name: "mini-level", type:"tmx", src: "data/map/mini-level.tmx"}
+           {name: "mini-level", type:"tmx", src: "data/map/mini-level.tmx"},
+           {name: "level05", type:"tmx", src: "data/map/level05.tmx"},
+           {name: "level06", type:"tmx", src: "data/map/level06.tmx"}
 
 	/* Background music. 
 	 * @example
