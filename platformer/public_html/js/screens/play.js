@@ -8,7 +8,7 @@ game.PlayScreen = me.ScreenObject.extend({
                 
                 me.levelDirector.loadLevel("level06");
                 
-                this.resetPlayer();
+                this.resetPlayer(0, 420);
 
 		// add our HUD to the game world
 		this.HUD = new game.HUD.Container();

@@ -14,6 +14,7 @@ game.resources = [
            {name: "color-cloud", type:"image", src: "data/img/color-cloud.jpg"},
            {name: "level4", type:"image", src: "data/img/level4.png"},
            {name: "star", type:"image", src: "data/img/star.png"},
+            {name: "23-hexagons", type:"image", src: "data/img/23-hexagons.jpg"},
 	/* Atlases 
 	 * @example
 	 * {name: "example_tps", type: "tps", src: "data/img/example_tps.json"},

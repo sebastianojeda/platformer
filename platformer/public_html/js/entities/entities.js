@@ -35,13 +35,15 @@ game.PlayerEntity = me.ObjectEntity.extend({
  }
         
          if(me.input.isKeyPressed("up")){
-            if(!this.jumping && !this.falling) {
-            this.vel.y = -this.maxVel.y * me.timer.tick;
-            this.renderable.setCurrentAnimation("up");
-            this.jumping = true;
+             this.jumping = true;
+           this.mutipleJump = (this.vel.y === 0)?1:this.mutipleJump;
+	 if (this.mutipleJump<=2) {
+				// easy 'math' for double jump
+	   this.vel.y -= (this.maxVel.y * this.mutipleJump++) * me.timer.tick;
+            
   }   
   }
-        
+      
   {
         var collision = me.game.world.collide(this);
         this.updateMovement();
@@ -58,13 +60,20 @@ game.LevelTrigger = me.ObjectEntity.extend({
        this.parent(x, y, settings); 
        this.collidable = true;
        this.level = settings.level;
+       this.xSpawn = settings.xSpawn;
+       this.ySpawn = settings.ySpawn;
     },
             
     onCollision: function(){
        this.collidable = false;
+       var x = this.xSpawn;
+       var y = this.ySpawn;  
        me.levelDirector.loadLevel(this.level);
-       me.state.current().resetPlayer();
+       me.state.current().resetPlayer(x, y);
     }
     
 });
 
+  // if(!this.jumping && !this.falling) {
+            //this.vel.y = -this.maxVel.y * me.timer.tick;
+            //this.renderable.setCurrentAnimation("up");
