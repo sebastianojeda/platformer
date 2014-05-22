@@ -6,13 +6,15 @@ game.PlayScreen = me.ScreenObject.extend({
 		// reset the score
 		game.data.score = 0;
                 
-                me.levelDirector.loadLevel("level06");
+                me.levelDirector.loadLevel("level01");
                 
                 this.resetPlayer(0, 420);
 
 		// add our HUD to the game world
 		this.HUD = new game.HUD.Container();
 		me.game.world.addChild(this.HUD);
+                
+                me.audio.playTrack("SpeedOfSound");
 	},
 
 
@@ -26,6 +28,7 @@ game.PlayScreen = me.ScreenObject.extend({
             
         resetPlayer: function(x, y){
             var player = me.pool.pull("player", x, y, {});
-            me.game.world.addChild(player, 100);
+                me.game.world.addChild(player, 100);
         }
+        
 });

@@ -45,12 +45,15 @@ var game = {
                 me.pool.register("player", game.PlayerEntity, true);
                 me.pool.register("levelTrigger", game.LevelTrigger, true);
                 me.pool.register("levelTrigger2", game.LevelTrigger2, true);
+                me.pool.register("slime-spritesheet", game.SlimeEntity, true);
                 
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
                 me.input.bindKey(me.input.KEY.LEFT, "left");
-                me.input.bindKey(me.input.KEY.UP, "up");
+                me.input.bindKey(me.input.KEY.UP, "jump", true);
+            
                
 		// Start the game.
 		me.state.change(me.state.PLAY);
+               
 	}
 };

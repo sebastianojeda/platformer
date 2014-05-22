@@ -31,10 +31,10 @@ game.PlayerEntity = me.ObjectEntity.extend({
         
            else{
             this.vel.x =0;
-             this.renderable.setCurrentAnimation("run");
+            this.renderable.setCurrentAnimation("run");
  }
         
-         if(me.input.isKeyPressed("up")){
+         if(me.input.isKeyPressed("jump")){
              this.jumping = true;
            this.mutipleJump = (this.vel.y === 0)?1:this.mutipleJump;
 	 if (this.mutipleJump<=2) {
@@ -74,6 +74,40 @@ game.LevelTrigger = me.ObjectEntity.extend({
     
 });
 
+
+game.SlimeEntity = me.ObjectEntity.extend({
+    init: function(x,y,settings){
+        settings.image = "slime-spritesheet";
+        settings.spritewidth = "60";
+        settings.spriteheight = "28";
+        settings.width = 60;
+        settings.height = 28;
+        this.parent(x,y,settings);
+        
+        this.collidable = true;
+        
+        this.renderable.addAnimation("idle", [3]); 
+        this.renderable.addAnimation("run", [3,4,5,6,7,8,9,10,11,12,13,14]);
+        this.renderable.setCurrentAnimation("idle");
+        
+        this.setVelocity(10, 21);
+        
+      
+    },
+       
+    update: function(deltatime){
+    this.previousVelocity = this.cloneVel();
+    
+      
+  {
+        this.updateMovement();
+        this.parent(deltatime);
+        return true;
+ }
+  
+
+ }
+ });
   // if(!this.jumping && !this.falling) {
             //this.vel.y = -this.maxVel.y * me.timer.tick;
             //this.renderable.setCurrentAnimation("up");
