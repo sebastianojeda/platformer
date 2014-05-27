@@ -108,6 +108,23 @@ game.SlimeEntity = me.ObjectEntity.extend({
 
  }
  });
-  // if(!this.jumping && !this.falling) {
-            //this.vel.y = -this.maxVel.y * me.timer.tick;
-            //this.renderable.setCurrentAnimation("up");
+ 
+ 
+ /*game.CoinEntity = me.CollectableEntity.extend({
+    init: function(x, y){ 
+       settings.image = "item-spritesheet";
+       settings.spritewidth = "70";
+       settings.spriteheight = "70";
+        this.parent(x, y, settings);
+        this.renderable.addAnimation("coin", [13,14,15]);
+        this.renderable.setCurrentAnimation("coin");
+    
+    },
+    
+    onCollision: function(){
+      game.data.score += 1;
+      this.collidable = false;
+      me.game.world.removeChild(this);
+
+    }       
+ });*/

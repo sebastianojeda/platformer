@@ -8,10 +8,7 @@ game.resources = [
            {name: "player1-spritesheet", type:"image", src: "data/img/player1-spritesheet.png"},
            {name: "cloud-tiles", type:"image", src: "data/img/cloud-tiles.png"},
            {name: "htc-one", type:"image", src: "data/img/htc-one.jpg"},
-           {name: "level", type:"image", src: "data/img/level.png"},
            {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
-           {name: "DEEP_SPACE", type:"image", src: "data/img/DEEP_SPACE.jpg"},
-           {name: "color-cloud", type:"image", src: "data/img/color-cloud.jpg"},
            {name: "level4", type:"image", src: "data/img/level4.png"},
            {name: "star", type:"image", src: "data/img/star.png"},
            {name: "23-hexagons", type:"image", src: "data/img/23-hexagons.jpg"},
@@ -42,7 +39,7 @@ game.resources = [
 	 * @example
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/", channel : 1},
 	 */
-         {name: "Magic", type: "audio", src: "data/sfx/", channel : 1}
+         {name: "The Walker", type: "audio", src: "data/sfx/", channel : 1}
         
 
 	/* Sound effects. 

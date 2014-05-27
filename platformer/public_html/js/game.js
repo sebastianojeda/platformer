@@ -5,7 +5,7 @@ var game = {
 	// an object where to store game information
 	data : {
 		// score
-		score : 0
+		score :0
 	},
 	
 	
@@ -46,14 +46,14 @@ var game = {
                 me.pool.register("levelTrigger", game.LevelTrigger, true);
                 me.pool.register("levelTrigger2", game.LevelTrigger2, true);
                 me.pool.register("slime-spritesheet", game.SlimeEntity, true);
-                
+                //me.pool.register("coinentity", game.CoinEntity, true);
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
                 me.input.bindKey(me.input.KEY.LEFT, "left");
                 me.input.bindKey(me.input.KEY.UP, "jump", true);
-            
+                me.input.bindKey(me.input.KEY.ENTER, "start");
                
 		// Start the game.
-		me.state.change(me.state.PLAY);
+		me.state.change(me.state.MENU);
                
 	}
 };
