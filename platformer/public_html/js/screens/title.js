@@ -35,5 +35,5 @@ game.MainTitle = me.Renderable.extend({
      draw: function(context){
          this.font.draw(context,"Press Enter to Play!",250, 530);
  
-     },       
+     }       
 });

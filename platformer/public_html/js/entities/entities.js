@@ -70,6 +70,7 @@ game.LevelTrigger = me.ObjectEntity.extend({
        var y = this.ySpawn;  
        me.levelDirector.loadLevel(this.level);
        me.state.current().resetPlayer(x, y);
+       alert(x + " " + y);
     }
     
 });

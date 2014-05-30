@@ -29,7 +29,7 @@
    <properties>
     <property name="level" value="level04"/>
     <property name="xSpawn" value="0"/>
-    <property name="ySpawn " value="2660"/>
+    <property name="ySpawn" value="2660"/>
    </properties>
   </object>
   <object name="levelTrigger" x="3222" y="698" width="71" height="140">
